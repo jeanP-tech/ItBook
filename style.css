@@ -3,6 +3,11 @@
   justify-content: center;
 }
 
+#logo a {
+  text-decoration: none;
+  color: black;
+}
+
 header h1{
   font-size: 50px;
   text-align: left;
@@ -74,15 +79,9 @@ header ul li {
 }
 
 .book_info {
-  display: inline;
-  margin-left: 20px;
-}
-
-.book_info ul{
   list-style: none;
-  display: inline;
 }
 
-.book_info ul li {
+.book_info li {
   margin-bottom: 20px;
 }
