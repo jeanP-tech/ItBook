@@ -1,3 +1,4 @@
+
 #container {
   display: flex;
   justify-content: center;
@@ -6,6 +7,10 @@
 #logo a {
   text-decoration: none;
   color: black;
+}
+
+header {
+  margin-bottom: 50px;
 }
 
 header h1{
@@ -57,14 +62,25 @@ header ul li {
   margin-bottom: 20px;
 }
 
-#library {
-  width: 90%;
+#iframe_library {
+  width: 93%;
+  height: 1000px;
+  border: none;
+}
+
+#books_in_library {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  margin-top: 100px;
+  margin-bottom: 1000px;
 }
+
+#books_in_library::after {
+  content: "";
+  flex: auto;
+}
+
 
 .book {
   margin: 10px 10px 70px 0;
