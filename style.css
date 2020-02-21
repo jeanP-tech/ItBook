@@ -62,21 +62,33 @@ header ul li {
   margin-bottom: 20px;
 }
 
-#iframe_library {
-  width: 93%;
-  height: 1000px;
+#menu_bar {
+  height: 50px;
+}
+
+#menu_bar .btn_zoom {
+  float: right;
+  margin-right: 50px;
+}
+
+#menu_bar .btn_zoom i {
+  float: left;
+  margin-right: 20px;
+}
+
+#plus, #minus {
   border: none;
+  background-color: inherit;
+  text-align: center;
 }
 
-#books_in_library {
+#booksInLibrary {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: space-around;
   flex-wrap: wrap;
-  margin-bottom: 1000px;
 }
 
-#books_in_library::after {
+#booksInLibrary::after {
   content: "";
   flex: auto;
 }

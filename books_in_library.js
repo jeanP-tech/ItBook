@@ -1,5 +1,8 @@
-const library = document.getElementById("books_in_library");
-const BOOK_NUMBER = 55;
+const library = document.getElementById("booksInLibrary");
+const plusIcon = document.getElementById("plus");
+const minusIcon = document.getElementById("minus");
+
+const BOOK_NUMBER = 150;
 
 function generateLibrary () {
 
@@ -37,51 +40,59 @@ const book = document.getElementsByClassName("book");
 const bookInfo = document.getElementsByClassName("book_info");
 const coverImg = document.getElementsByClassName("cover_img");
 
-let lastScroll = 0;
-
-function scrollMove() {
-  let nowScroll = window.pageYoffset || document.documentElement.scrollTop;
-
-  if (nowScroll > lastScroll) { // downscroll
-      if (nowScroll > 500) {
-        for (let i = 0; i < BOOK_NUMBER; i++){
-          book[i].style.width = 100 + 'px';
-          coverImg[i].style.width = 60 + 'px';
-        }
-      } else if (nowScroll > 300) {
-        for (let i = 0; i < BOOK_NUMBER; i++){
-          book[i].style.width = 150 + 'px';
-          coverImg[i].style.width = 80 + 'px';
-        }
-      } else if (nowScroll > 100) {
-        for (let i = 0; i < BOOK_NUMBER; i++){
-          bookInfo[i].style.display = "none";
-          book[i].style.width = 200 + 'px';
-          coverImg[i].style.width = 100 + 'px';
-        }
-      }
-  } else {  // upscroll
-    // if (nowScroll > 100) {
-    //   for (let i = 0; i < BOOK_NUMBER; i++){
-    //     book[i].style.width = 100 + 'px';
-    //     coverImg[i].style.width = 60 + 'px';
-    //   }
-    // } else if (nowScroll > 300) {
-    //   for (let i = 0; i < BOOK_NUMBER; i++){
-    //     book[i].style.width = 150 + 'px';
-    //     coverImg[i].style.width = 80 + 'px';
-    //   }
-    // } else if (nowScroll > 500) {
-    //   for (let i = 0; i < BOOK_NUMBER; i++){
-    //     bookInfo[i].style.display = "none";
-    //     book[i].style.width = 200 + 'px';
-    //     coverImg[i].style.width = 100 + 'px';
-    //   }
-    // }
-  }
-
-  lastScroll = nowScroll;
-}
+function zoomIn() {
+  
+};
 
 
-window.addEventListener("scroll", scrollMove);
+plusIcon.addEventListener("click", zoomIn);
+
+// let lastScroll = 0;
+//
+// function scrollMove() {
+//   let nowScroll = window.pageYoffset || document.documentElement.scrollTop;
+//
+//   if (nowScroll > lastScroll) { // downscroll
+//     console.log(nowScroll)
+//       if (nowScroll > 1500) {
+//         for (let i = 0; i < BOOK_NUMBER; i++){
+//           book[i].style.width = 100 + 'px';
+//           coverImg[i].style.width = 60 + 'px';
+//         }
+//       } else if (nowScroll > 1000) {
+//         for (let i = 0; i < BOOK_NUMBER; i++){
+//           book[i].style.width = 150 + 'px';
+//           coverImg[i].style.width = 80 + 'px';
+//         }
+//       } else if (nowScroll > 500) {
+//         for (let i = 0; i < BOOK_NUMBER; i++){
+//           bookInfo[i].style.display = "none";
+//           book[i].style.width = 200 + 'px';
+//           coverImg[i].style.width = 100 + 'px';
+//         }
+//       }
+//   } else {  // upscroll
+//     if (nowScroll < 100) {
+//       for (let i = 0; i < BOOK_NUMBER; i++){
+//         bookInfo[i].style.display = "block";
+//         book[i].style.width = 320 + 'px';
+//         coverImg[i].style.width = 130 + 'px';
+//       }
+//     } else if (nowScroll < 300) {
+//         for (let i = 0; i < BOOK_NUMBER; i++){
+//           book[i].style.width = 200 + 'px';
+//           coverImg[i].style.width = 100 + 'px';
+//         }
+//     } else if (nowScroll < 500) {
+//         for (let i = 0; i < BOOK_NUMBER; i++){
+//           book[i].style.width = 150 + 'px';
+//           coverImg[i].style.width = 80 + 'px';
+//         }
+//       }
+//   }
+//
+//   lastScroll = nowScroll;
+// }
+//
+//
+// window.addEventListener("scroll", scrollMove);

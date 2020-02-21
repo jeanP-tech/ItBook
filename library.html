@@ -3,8 +3,9 @@
   <head>
     <title>잇북</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
   </head>
-  <body style="overflow:hidden">
+  <body>
 
     <header>
       <h1 id="logo"><a href="main.html">Book</a></h1>
@@ -14,10 +15,16 @@
       </ul>
     </header>
 
-    <div id="container">
-      <iframe src="books_in_library.html" id="iframe_library">
-      </iframe>
+    <div id="menu_bar">
+      <span class="btn_zoom">
+        <button id="plus"> <i class="fas fa-plus"></i> </button>
+        <button id="minus"> <i class="fas fa-minus" id="zoom_out"></i> </button>
+      </span>
     </div>
 
+    <div id="booksInLibrary">
+    </div>
+
+  <script src="books_in_library.js"></script>
   </body>
 </html>
