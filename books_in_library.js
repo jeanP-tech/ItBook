@@ -40,59 +40,57 @@ const book = document.getElementsByClassName("book");
 const bookInfo = document.getElementsByClassName("book_info");
 const coverImg = document.getElementsByClassName("cover_img");
 
+let btnClick = 0;
+
 function zoomIn() {
-  
+  btnClick += 1;
+
+  if (btnClick === 1) {
+    for (let i = 0; i < BOOK_NUMBER; i++){
+      bookInfo[i].style.display = "none";
+      book[i].style.width = 200 + 'px';
+      coverImg[i].style.width = 100 + 'px';
+    }
+  } else if (btnClick === 2) {
+    for (let i = 0; i < BOOK_NUMBER; i++){
+      book[i].style.width = 150 + 'px';
+      coverImg[i].style.width = 80 + 'px';
+    }
+  } else if (btnClick === 3) {
+    for (let i = 0; i < BOOK_NUMBER; i++){
+      book[i].style.width = 100 + 'px';
+      coverImg[i].style.width = 60 + 'px';
+    }
+  } else {
+    btnClick = 3;
+    console.log(btnClick);
+  }
+};
+
+function zoomOut() {
+  btnClick -= 1;
+
+  if (btnClick === 2) {
+    for (let i = 0; i < BOOK_NUMBER; i++){
+      book[i].style.width = 150 + 'px';
+      coverImg[i].style.width = 80 + 'px';
+    }
+  } else if (btnClick === 1) {
+    for (let i = 0; i < BOOK_NUMBER; i++){
+      book[i].style.width = 200 + 'px';
+      coverImg[i].style.width = 100 + 'px';
+    }
+  } else if (btnClick === 0) {
+    for (let i = 0; i < BOOK_NUMBER; i++){
+      bookInfo[i].style.display = "block";
+      book[i].style.width = 320 + 'px';
+      coverImg[i].style.width = 120 + 'px';
+    }
+  } else {
+    btnClick = 0;
+  }
 };
 
 
 plusIcon.addEventListener("click", zoomIn);
-
-// let lastScroll = 0;
-//
-// function scrollMove() {
-//   let nowScroll = window.pageYoffset || document.documentElement.scrollTop;
-//
-//   if (nowScroll > lastScroll) { // downscroll
-//     console.log(nowScroll)
-//       if (nowScroll > 1500) {
-//         for (let i = 0; i < BOOK_NUMBER; i++){
-//           book[i].style.width = 100 + 'px';
-//           coverImg[i].style.width = 60 + 'px';
-//         }
-//       } else if (nowScroll > 1000) {
-//         for (let i = 0; i < BOOK_NUMBER; i++){
-//           book[i].style.width = 150 + 'px';
-//           coverImg[i].style.width = 80 + 'px';
-//         }
-//       } else if (nowScroll > 500) {
-//         for (let i = 0; i < BOOK_NUMBER; i++){
-//           bookInfo[i].style.display = "none";
-//           book[i].style.width = 200 + 'px';
-//           coverImg[i].style.width = 100 + 'px';
-//         }
-//       }
-//   } else {  // upscroll
-//     if (nowScroll < 100) {
-//       for (let i = 0; i < BOOK_NUMBER; i++){
-//         bookInfo[i].style.display = "block";
-//         book[i].style.width = 320 + 'px';
-//         coverImg[i].style.width = 130 + 'px';
-//       }
-//     } else if (nowScroll < 300) {
-//         for (let i = 0; i < BOOK_NUMBER; i++){
-//           book[i].style.width = 200 + 'px';
-//           coverImg[i].style.width = 100 + 'px';
-//         }
-//     } else if (nowScroll < 500) {
-//         for (let i = 0; i < BOOK_NUMBER; i++){
-//           book[i].style.width = 150 + 'px';
-//           coverImg[i].style.width = 80 + 'px';
-//         }
-//       }
-//   }
-//
-//   lastScroll = nowScroll;
-// }
-//
-//
-// window.addEventListener("scroll", scrollMove);
+minusIcon.addEventListener("click", zoomOut);

@@ -1,8 +1,4 @@
 
-#container {
-  display: flex;
-  justify-content: center;
-}
 
 #logo a {
   text-decoration: none;
@@ -71,9 +67,12 @@ header ul li {
   margin-right: 50px;
 }
 
-#menu_bar .btn_zoom i {
+#menu_bar button {
+  cursor: pointer;
+  outline:none;
   float: left;
-  margin-right: 20px;
+  margin-right: 10px;
+  font-size: 18px;
 }
 
 #plus, #minus {
@@ -82,7 +81,13 @@ header ul li {
   text-align: center;
 }
 
+#container {
+  display: flex;
+  justify-content: space-around;
+}
+
 #booksInLibrary {
+  width: 90%;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
