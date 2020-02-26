@@ -1,4 +1,6 @@
-
+body {
+  font-family: 'Noto Serif KR';
+}
 
 #logo a {
   text-decoration: none;
@@ -32,8 +34,15 @@ header ul li {
 }
 
 #search {
+  height: 400px;
   text-align: center;
-  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-books-1577735514.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #search input {
@@ -42,9 +51,14 @@ header ul li {
   text-align: center;
 }
 
+.center_text {
+  height: 200px;
+  text-align: center;
+  line-height: 200px;
+}
+
 #center_menu{
   text-align: center;
-  margin-top: 200px;
 }
 
 #center_menu ul {
@@ -117,4 +131,47 @@ header ul li {
 
 .book_info li {
   margin-bottom: 20px;
+}
+
+#detail_cover_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 510px;
+  margin-top: 100px;
+}
+
+#detail_book_info img {
+  margin-right: 70px;
+  width: 350px;
+}
+
+#detail_info {
+  width: 350px;
+  float: right;
+  margin-left: 100px;
+}
+
+#detail_info ul {
+    list-style: none;
+}
+
+#detail_info li {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#detail_info ul #title {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+#detail_info ul #comment {
+  margin-top: 50px;
+}
+
+#hashtag {
+  text-align: center;
+  margin: 70px 0;
 }
