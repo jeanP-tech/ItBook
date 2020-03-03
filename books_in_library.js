@@ -22,6 +22,7 @@ function generateLibrary () {
     book.appendChild(bookInfo);
 
     const bookTitle = document.createElement("li");
+    bookTitle.className = "book_title";
     bookTitle.innerHTML = '목소리를 드릴게요';
     bookInfo.appendChild(bookTitle);
     const bookRank = document.createElement("li");
@@ -39,6 +40,7 @@ generateLibrary()
 const book = document.getElementsByClassName("book");
 const bookInfo = document.getElementsByClassName("book_info");
 const coverImg = document.getElementsByClassName("cover_img");
+const bookTitle = document.getElementsByClassName("book_title");
 
 let btnClick = 0;
 
@@ -91,6 +93,15 @@ function zoomOut() {
   }
 };
 
-
 plusIcon.addEventListener("click", zoomIn);
 minusIcon.addEventListener("click", zoomOut);
+
+
+for (let i = 0; i < BOOK_NUMBER; i++){
+  bookTitle[i].addEventListener("click", goDetail);
+  coverImg[i].addEventListener("click", goDetail);
+}
+
+function goDetail() {
+  location.href="book_detail.html";
+}

@@ -72,13 +72,28 @@ header ul li {
   margin-bottom: 20px;
 }
 
+#read_select {
+  float: left;
+  margin-right: 20px;
+}
+
+#btn_search {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+  outline:none;
+  font-size: 20px;
+}
+
 #menu_bar {
   height: 50px;
+  margin: 100px 50px 0 80px;
 }
 
 #menu_bar .btn_zoom {
   float: right;
   margin-right: 50px;
+  display: inline;
 }
 
 #menu_bar button {
@@ -123,6 +138,7 @@ header ul li {
 
 .book img {
   width: 130px;
+  cursor: pointer;
 }
 
 .book_info {
@@ -131,6 +147,10 @@ header ul li {
 
 .book_info li {
   margin-bottom: 20px;
+}
+
+.book_title {
+  cursor: pointer;
 }
 
 #detail_cover_info {
