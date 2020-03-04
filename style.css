@@ -115,41 +115,39 @@ header ul li {
   justify-content: space-around;
 }
 
-#booksInLibrary {
+#read_list, #wish_list, #throw_list {
   width: 90%;
-  display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
 
-#booksInLibrary::after {
+#read_list::after, #wish_list::after, #throw_list::after {
   content: "";
   flex: auto;
 }
 
 
-.book {
+.book, .wish_book, .throw_book {
   margin: 10px 10px 70px 0;
   width: 320px;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.book img {
+.cover_img, .wish_cover_img, .throw_cover_img {
   width: 130px;
   cursor: pointer;
 }
 
-.book_info {
+.book_info, .wish_book_info, .throw_book_info {
   list-style: none;
 }
 
-.book_info li {
+.book_info li, .wish_book_info li, .throw_book_info li{
   margin-bottom: 20px;
 }
 
-.book_title {
+.book_title, .wish_book_title, .throw_book_title {
   cursor: pointer;
 }
 
