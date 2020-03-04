@@ -136,6 +136,9 @@ header ul li {
 
 .cover_img, .wish_cover_img, .throw_cover_img {
   width: 130px;
+}
+
+.cover_img {
   cursor: pointer;
 }
 
@@ -147,7 +150,7 @@ header ul li {
   margin-bottom: 20px;
 }
 
-.book_title, .wish_book_title, .throw_book_title {
+.book_title {
   cursor: pointer;
 }
 
