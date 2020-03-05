@@ -1,6 +1,6 @@
 const container = document.getElementById("container");
 
-const BOOK_NUMBER = 30;
+const BOOK_NUMBER = 13;
 
 // readList
 const book = document.getElementsByClassName("book");

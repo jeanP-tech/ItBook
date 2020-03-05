@@ -3,7 +3,7 @@ const minusIcon = document.getElementById("minus");
 
 let btnClick = 0;
 
-function zoomIn() {
+function zoomOut() {
   btnClick += 1;
 
   if (btnClick === 1) {
@@ -47,7 +47,7 @@ function zoomIn() {
   }
 };
 
-function zoomOut() {
+function zoomIn() {
   btnClick -= 1;
 
   if (btnClick === 2) {

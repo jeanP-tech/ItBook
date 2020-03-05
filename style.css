@@ -8,19 +8,21 @@ body {
 }
 
 header {
+  height: 90px;
+  display: flex;
+  align-items: center;
   margin-bottom: 70px;
 }
 
 header h1{
   font-size: 50px;
-  text-align: left;
   margin-left: 40px;
   display: inline;
 }
 
 header ul {
   list-style: none;
-  float: right;
+  margin-left: auto;
 }
 
 header ul a {
