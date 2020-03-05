@@ -154,12 +154,18 @@ header ul li {
   cursor: pointer;
 }
 
+.fa-arrow-left {
+  font-size: 40px;
+  margin-left: 50px;
+  color: black;
+}
+
 #detail_cover_info {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 510px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 #detail_book_info img {
