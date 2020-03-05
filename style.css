@@ -8,7 +8,7 @@ body {
 }
 
 header {
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 
 header h1{
@@ -72,9 +72,24 @@ header ul li {
   margin-bottom: 20px;
 }
 
+#menu_bar_container {
+  display: flex;
+  justify-content: center;
+}
+
+#menu_bar {
+  height: 50px;
+  width: 88%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
 #read_select {
-  float: left;
   margin-right: 20px;
+  height: 35px;
+  width: 120px;
 }
 
 #btn_search {
@@ -85,15 +100,10 @@ header ul li {
   font-size: 20px;
 }
 
-#menu_bar {
-  height: 50px;
-  margin: 100px 50px 0 80px;
-}
-
-#menu_bar .btn_zoom {
-  float: right;
-  margin-right: 50px;
-  display: inline;
+.btn_zoom {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 }
 
 #menu_bar button {
