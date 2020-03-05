@@ -202,3 +202,7 @@ header ul li {
   text-align: center;
   margin: 70px 0;
 }
+
+#calendar td{
+  width: 100px;
+}
