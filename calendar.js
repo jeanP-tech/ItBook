@@ -1,52 +1,92 @@
-var today = new Date();
-var date = new Date();
+let today = new Date();
 
-function prevCalendar() {
-  today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
-  buildCalendar();
-}
+let todayYear = today.getFullYear();
+let todayMonth = today.getMonth() + 1;
 
-function nextCalendar() {
-  today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
-  buildCalendar();
-}
+let calendar = document.getElementById("calendar_table");
 
 function buildCalendar() {
-  var doMonth = new Date(today.getFullYear(), today.getMonth(), 1);
-  var lastDate = new Date(today.getFullYear(), today.getMonth()+1, 0);
-  var tbCalendar = document.getElementById("calendar");
-  var tbCalendarYM = document.getElementById("tbCalendarYM");
-  tbCalendarYM.innerHTML = today.getFullYear() + "년 " + (today.getMonth() + 1) + "월";
+  let firstDate = new Date(todayYear, todayMonth - 1, 1);
+  let lastDate = new Date(todayYear, todayMonth, 0);
+  let day = firstDate.getDay();
+  let week = Math.ceil(lastDate.getDate() / 7) + 1;
+  let today_yearMonth = todayYear + "년 " + todayMonth + "월";
 
-  while (tbCalendar.rows.length > 2) {
-    tbCalendar.deleteRow(tbCalendar.rows.length - 1);
-  }
+  let leftDays = 7;
+  let setDays = 1;
+  let nextMonthDate = 1;
 
-  var row = null;
-  row = tbCalendar.insertRow();
+  for (i = 1; i < week; i++) {
+    let row = calendar.insertRow();
 
-  var cnt = 0;
-  for(i=0; i<=lastDate.getDate(); i++) {
-    cell = row.insertCell();
-    cell.innerHTML = i;
-    cnt = cnt + 1
-  }
-
-  if (cnt % 7 == 1) {
-    cell.innerHTML = "<font color=#F79DC2>" + i
-  }
-
-  if (cnt % 7 == 0) {
-    cell.innerHTML = "<font color=skyblue>" + i
-    row = calendar.insertRow();
-  }
-
-  if (today.getFullYear() == date.getFullYear()
-    && today.getMonth() == date.getMonth()
-    && i == date.getDate()) {
-      cell.bgColor = "#FAF58C";
+    while (day != 0) {
+      row.insertCell().innerHTML = "";
+      day -= 1;
+      leftDays -= 1;
     }
 
+    while (leftDays != 0) {
+      if (setDays > lastDate.getDate()) {
+        row.insertCell().innerHTML = nextMonthDate;
+        leftDays -= 1
+        nextMonthDate += 1;
+      } else {
+        row.insertCell().innerHTML = setDays;
+        setDays += 1;
+        leftDays -= 1;
+      }
+    }
+    leftDays = 7;
+  }
+
+  setDays -= 1;
+  if (setDays != lastDate.getDate()) {
+    let row = calendar.insertRow();
+    while (setDays != lastDate.getDate()) {
+      setDays++;
+      leftDays--;
+      row.insertCell().innerHTML = setDays;
+    }
+    while (leftDays != 0) {
+      row.insertCell().innerHTML = nextMonthDate;
+      nextMonthDate++;
+      leftDays--;
+    }
+  }
+  document.getElementById("yearMonth").innerHTML = today_yearMonth;
+}
+buildCalendar();
+
+function deleteCalendar() {
+  while (calendar.rows.length > 2) {
+    calendar.deleteRow(2);
+  }
 }
 
-buildCalendar();
+function prevMonth() {
+  todayMonth = todayMonth - 1;
+  if (todayMonth == 0) {
+    todayMonth = 12;
+    todayYear -= 1;
+  }
+  deleteCalendar();
+  today = new Date(todayYear, todayMonth - 1);
+  buildCalendar();
+}
+
+function nextMonth() {
+  todayMonth += 1;
+  if (todayMonth == 13) {
+    todayMonth = 1;
+    todayYear = todayYear + 1;
+  }
+  deleteCalendar();
+  today = new Date(todayYear, todayMonth - 1);
+  buildCalendar();
+}
+
+const prevMonthBtn = document.getElementById("previousMonth");
+const nextMonthBtn = document.getElementById("nextMonth");
+
+prevMonthBtn.addEventListener("click", prevMonth);
+nextMonthBtn.addEventListener("click", nextMonth);
