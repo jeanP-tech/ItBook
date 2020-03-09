@@ -214,16 +214,38 @@ header ul li {
   margin: 70px 0;
 }
 
-td {
-  width: 50px;
-  height: 50px;
-  text-align: center;
+#calendar_table {
+  display: flex;
+  justify-content: center;
+  border-collapse: collapse;
+}
+
+#calendar_table td {
+  width: 150px;
+  height: 100px;
+  text-align: left;
   font-size: 20px;
-  border:2px;
-  border-color:black;
-  border-radius : 8px;/*모서리 둥글게*/
+  border-bottom: 1px solid black;
+  vertical-align: top;
+}
+
+#mainBar td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+#calendar_days td{
+  height: 20px;
+  vertical-align: middle;
 }
 
 #yearMonth  {
   width: 250px;
+}
+
+#btn_calendar_prev, #btn_calendar_next {
+  font-size: 30px;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
 }

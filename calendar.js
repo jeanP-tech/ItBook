@@ -27,7 +27,6 @@ function buildCalendar() {
 
     while (leftDays != 0) {
       if (setDays > lastDate.getDate()) {
-        row.insertCell().innerHTML = nextMonthDate;
         leftDays -= 1
         nextMonthDate += 1;
       } else {
@@ -48,7 +47,7 @@ function buildCalendar() {
       row.insertCell().innerHTML = setDays;
     }
     while (leftDays != 0) {
-      row.insertCell().innerHTML = nextMonthDate;
+      row.insertCell().innerHTML = "";
       nextMonthDate++;
       leftDays--;
     }
