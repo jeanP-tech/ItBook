@@ -138,10 +138,10 @@ header ul li {
   flex: auto;
 }
 
-
 .book, .wish_book, .throw_book {
   margin: 10px 10px 70px 0;
   width: 320px;
+  justify-content: center;
   align-items: center;
 }
 
