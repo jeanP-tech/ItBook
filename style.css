@@ -47,10 +47,19 @@ header ul li {
   background-size: cover;
 }
 
-#search input {
+#search_container .fa-search {
+  position: absolute;
+  margin-top: 13px;
+  margin-left: 15px;
+}
+
+#search_container input {
   width: 400px;
   height: 40px;
   text-align: center;
+  border-radius: 10px;
+  border: white;
+  outline: none;
 }
 
 .center_text {
